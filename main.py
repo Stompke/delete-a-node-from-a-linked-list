@@ -27,10 +27,19 @@ def deleteNode(head, position):
     cur = head
     count = 0
 
-    while cur is not None:
-        print(cur.data)
-        
-        
+    if position == 0:
+        head = cur.next
+        return head
 
+    prev = None
+    while cur is not None:
+
+        
+        if count == position:
+            prev.next = cur.next
+
+            return head
+
+        prev = cur
         cur = cur.next
         count += 1 
